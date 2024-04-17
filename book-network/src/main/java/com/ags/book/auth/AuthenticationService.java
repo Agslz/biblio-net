@@ -9,10 +9,12 @@ import com.ags.book.security.JwtService;
 import com.ags.book.user.Token;
 import com.ags.book.user.User;
 import jakarta.mail.MessagingException;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -80,6 +82,20 @@ public class AuthenticationService {
                 .build();
         tokenRepository.save(token);
         return generatedToken;
+    }
+
+    //@Transactional
+    public void activateAccount(String token) throws MessagingException {
+        Token savedToken = tokenRepository.findByToken(token).orElseThrow(() -> new RuntimeException("Invalid token"));
+        if(LocalDateTime.now().isAfter(savedToken.getExpiresAt())){
+            sendValidationEmail(savedToken.getUser());
+            throw new RuntimeException("Activation token expired. A new activation token has been sent to the email.");
+        }
+        var user = userRepository.findById(savedToken.getId()).orElseThrow(() -> new UsernameNotFoundException("User not found."));
+        user.setEnabled(true);
+        userRepository.save(user);
+        savedToken.setValidatedAt(LocalDateTime.now());
+        tokenRepository.save(savedToken);
     }
 
     private String generateActivationCode(int length) {
