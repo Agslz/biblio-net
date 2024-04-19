@@ -102,7 +102,7 @@ public class User implements UserDetails, Principal {
         return enabled;
     }
 
-    public String FullName(){
+    public String fullName(){
         return firstname + " " + lastname;
     }
 }
