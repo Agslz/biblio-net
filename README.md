@@ -57,8 +57,8 @@ Book Social Network es una aplicación completa que permite a los usuarios gesti
 
 Para comenzar con el proyecto Book Social Network, sigue las instrucciones de configuración en los directorios respectivos:
 
-- [Instrucciones de Configuración del Backend](#instrucciones-de-configuración-del-backend)
-- [Instrucciones de Configuración del Frontend](#instrucciones-de-configuración-del-frontend)
+- [Instrucciones de Configuración del Backend](https://github.com/Agslz/book-social-network/blob/main/book-network/README.md)
+<!-- [Instrucciones de Configuración del Frontend](#instrucciones-de-configuración-del-frontend)-->
 
 ## Licencia
 
