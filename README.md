@@ -60,6 +60,10 @@ Para comenzar con el proyecto Book Social Network, sigue las instrucciones de co
 - [Instrucciones de Configuración del Backend](#instrucciones-de-configuración-del-backend)
 - [Instrucciones de Configuración del Frontend](#instrucciones-de-configuración-del-frontend)
 
+## Licencia
+
+Este proyecto está licenciado bajo la [Licencia Apache 2.0](LICENSE). Consulta el archivo LICENSE para más detalles.
+
 ## Agradecimientos
 
 Agradecimientos especiales a [Ali BouAli](https://www.youtube.com/@BoualiAli) por su inspiración y enseñanzas en la realización de este proyecto.
