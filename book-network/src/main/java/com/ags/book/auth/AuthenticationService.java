@@ -9,7 +9,6 @@ import com.ags.book.security.JwtService;
 import com.ags.book.user.Token;
 import com.ags.book.user.User;
 import jakarta.mail.MessagingException;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -62,7 +61,7 @@ public class AuthenticationService {
 
         emailService.sendEmail(
                 user.getEmail(),
-                user.FullName(),
+                user.fullName(),
                 EmailTemplateName.ACTIVATE_ACCOUNT,
                 activationUrl,
                 newToken,
@@ -118,7 +117,7 @@ public class AuthenticationService {
         );
         var claims = new HashMap<String, Object>();
         var user = ((User)auth.getPrincipal());
-        claims.put("fullname", user.FullName());
+        claims.put("fullname", user.fullName());
         var jwtToken = jwtService.generateToken(claims, user);
         return AuthenticationResponse.builder().token(jwtToken).build();
     }
