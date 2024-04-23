@@ -1,7 +1,7 @@
 package com.ags.book.book;
 
 import com.ags.book.file.FileUtils;
-import com.ags.book.history.BookTranstacionHistory;
+import com.ags.book.history.BookTransactionHistory;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -32,7 +32,7 @@ public class BookMapper {
             .build();
     }
 
-    public BorrowedBookResponse toBorrowedBookResponse(BookTranstacionHistory history) {
+    public BorrowedBookResponse toBorrowedBookResponse(BookTransactionHistory history) {
         return BorrowedBookResponse.builder()
                 .id(history.getBook().getId())
                 .title(history.getBook().getTitle())

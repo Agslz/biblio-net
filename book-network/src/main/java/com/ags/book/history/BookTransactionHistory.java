@@ -21,7 +21,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @NoArgsConstructor
 @AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
-public class BookTranstacionHistory extends BaseEntity {
+public class BookTransactionHistory extends BaseEntity {
 
     // User Relationship
     @ManyToOne

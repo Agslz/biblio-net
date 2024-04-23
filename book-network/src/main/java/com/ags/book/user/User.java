@@ -1,7 +1,7 @@
 package com.ags.book.user;
 
 import com.ags.book.book.Book;
-import com.ags.book.history.BookTranstacionHistory;
+import com.ags.book.history.BookTransactionHistory;
 import com.ags.book.role.Role;
 import jakarta.persistence.*;
 import lombok.*;
@@ -49,7 +49,7 @@ public class User implements UserDetails, Principal {
     private List<Book> books;
 
     @OneToMany(mappedBy = "user")
-    private List<BookTranstacionHistory> histories;
+    private List<BookTransactionHistory> histories;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)

@@ -2,7 +2,7 @@ package com.ags.book.book;
 
 import com.ags.book.commons.BaseEntity;
 import com.ags.book.feedback.Feedback;
-import com.ags.book.history.BookTranstacionHistory;
+import com.ags.book.history.BookTransactionHistory;
 import com.ags.book.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,8 +13,6 @@ import lombok.experimental.SuperBuilder;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.util.List;
-
-import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -41,7 +39,7 @@ public class Book extends BaseEntity {
     private List<Feedback> feedbacks;
 
     @OneToMany(mappedBy = "book")
-    private List<BookTranstacionHistory> histories;
+    private List<BookTransactionHistory> histories;
 
     @Transient
     public double getRate() {
