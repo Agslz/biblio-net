@@ -7,12 +7,12 @@ import { StrictHttpResponse } from '../../strict-http-response';
 import { RequestBuilder } from '../../request-builder';
 
 
-export interface ApprovedReturnBorrowBook$Params {
+export interface ApproveReturnBorrowBook$Params {
   'book-id': number;
 }
 
-export function approvedReturnBorrowBook(http: HttpClient, rootUrl: string, params: ApprovedReturnBorrowBook$Params, context?: HttpContext): Observable<StrictHttpResponse<number>> {
-  const rb = new RequestBuilder(rootUrl, approvedReturnBorrowBook.PATH, 'patch');
+export function approveReturnBorrowBook(http: HttpClient, rootUrl: string, params: ApproveReturnBorrowBook$Params, context?: HttpContext): Observable<StrictHttpResponse<number>> {
+  const rb = new RequestBuilder(rootUrl, approveReturnBorrowBook.PATH, 'patch');
   if (params) {
     rb.path('book-id', params['book-id'], {});
   }
@@ -27,4 +27,4 @@ export function approvedReturnBorrowBook(http: HttpClient, rootUrl: string, para
   );
 }
 
-approvedReturnBorrowBook.PATH = '/books/borrow/return/approved/{book-id}';
+approveReturnBorrowBook.PATH = '/books/borrow/return/approve/{book-id}';
