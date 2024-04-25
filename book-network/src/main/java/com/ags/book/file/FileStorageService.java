@@ -14,6 +14,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import static java.io.File.separator;
+
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -22,13 +24,17 @@ public class FileStorageService {
     @Value("${application.file.uploads.photos-output-path}")
     private String fileUploadPath;
 
-    public String saveFile(@Nonnull MultipartFile sourceFile, @Nonnull Integer userId) {
-        final String fileUploadSubPath = "users" + File.pathSeparator + userId;
+    public String saveFile(
+            @Nonnull MultipartFile sourceFile,
+            @Nonnull Integer bookId,
+            @Nonnull Integer userId
+    ) {
+        final String fileUploadSubPath = "users" + separator + userId;
         return uploadFile(sourceFile, fileUploadSubPath);
     }
 
     private String uploadFile(@Nonnull MultipartFile sourceFile, @Nonnull String fileUploadSubPath) {
-        final String finalUploadPath = fileUploadPath + File.separator + fileUploadSubPath;
+        final String finalUploadPath = fileUploadPath + separator + fileUploadSubPath;
         File targetFolder = new File(finalUploadPath);
         if(!targetFolder.exists()){
             boolean folderCreated = targetFolder.mkdirs();
@@ -39,7 +45,7 @@ public class FileStorageService {
         }
         final String fileExtension = getFileExtension(sourceFile.getOriginalFilename());
         // ./upload/users/1/1U9323923923.jpg
-        String targetFilePath = finalUploadPath + File.separator + System.currentTimeMillis() + "." + fileExtension;
+        String targetFilePath = finalUploadPath + separator + System.currentTimeMillis() + "." + fileExtension;
         Path targetPath = Paths.get(targetFilePath);
         try{
             Files.write(targetPath,sourceFile.getBytes());
