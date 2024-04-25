@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
-import {Router} from "@angular/router";
-import {AuthenticationService} from "../../services/services/authentication.service";
+import {Router} from '@angular/router';
+import {AuthenticationService} from '../../services/services/authentication.service';
+import {skipUntil} from 'rxjs';
 
 @Component({
   selector: 'app-activate-account',
@@ -24,7 +25,6 @@ export class ActivateAccountComponent {
       next: () => {
         this.message = 'Your account has been successfully activated.\nNow you can proceed to login';
         this.submitted = true;
-        this.isOkay = true;
       },
       error: () => {
         this.message = 'Token has been expired or invalid';
@@ -41,4 +41,6 @@ export class ActivateAccountComponent {
   onCodeCompleted(token: string) {
     this.confirmAccount(token);
   }
+
+  protected readonly skipUntil = skipUntil;
 }

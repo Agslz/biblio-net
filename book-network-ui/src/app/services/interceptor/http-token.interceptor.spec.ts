@@ -6,7 +6,7 @@ describe('HttpTokenInterceptor', () => {
   beforeEach(() => TestBed.configureTestingModule({
     providers: [
       HttpTokenInterceptor
-    ]
+      ]
   }));
 
   it('should be created', () => {
