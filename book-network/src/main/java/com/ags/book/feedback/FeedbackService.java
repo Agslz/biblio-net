@@ -21,7 +21,7 @@ import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
-public class FeedbackService  {
+public class FeedbackService {
 
     private final FeedBackRepository feedBackRepository;
     private final BookRepository bookRepository;
