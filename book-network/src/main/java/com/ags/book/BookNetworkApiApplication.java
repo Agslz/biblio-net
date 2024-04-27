@@ -1,7 +1,6 @@
 package com.ags.book;
 
-import com.ags.book.config.ApplicationAuditAware;
-import com.ags.book.repository.RoleRepository;
+import com.ags.book.role.RoleRepository;
 import com.ags.book.role.Role;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

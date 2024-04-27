@@ -23,7 +23,6 @@ import java.util.Objects;
 
 import static com.ags.book.book.BookSpecification.withOwnerId;
 
-import static com.ags.book.book.BookSpecification.withOwnerId;
 
 @Service
 @RequiredArgsConstructor

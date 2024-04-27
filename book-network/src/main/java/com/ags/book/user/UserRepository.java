@@ -1,6 +1,5 @@
-package com.ags.book.repository;
+package com.ags.book.user;
 
-import com.ags.book.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

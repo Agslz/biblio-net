@@ -1,6 +1,5 @@
-package com.ags.book.repository;
+package com.ags.book.role;
 
-import com.ags.book.role.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

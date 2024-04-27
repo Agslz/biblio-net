@@ -8,12 +8,11 @@ import org.springframework.data.repository.query.Param;
 
 import javax.net.ssl.SSLSession;
 
-public interface FeedBackRepository extends JpaRepository<Feedback, Integer>{
+public interface FeedBackRepository extends JpaRepository<Feedback, Integer> {
     @Query("""
-                        SELECT feedback
-                        FROM Feedback  feedback
-                        WHERE feedback.book.id = :bookId
-            """)
+            SELECT feedback
+            FROM Feedback  feedback
+            WHERE feedback.book.id = :bookId
+""")
     Page<Feedback> findAllByBookId(@Param("bookId") Integer bookId, Pageable pageable);
-
 }

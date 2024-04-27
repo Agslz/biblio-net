@@ -1,6 +1,6 @@
-## Book Social Network
+## Biblio Net
 
-Book Social Network es una aplicación completa que permite a los usuarios gestionar sus colecciones de libros y participar en una comunidad de entusiastas de los libros. Ofrece características como registro de usuario, validación de correo electrónico segura, gestión de libros (incluyendo creación, actualización, compartición y archivado), préstamo de libros con verificación de disponibilidad, funcionalidad de devolución de libros y aprobación de devoluciones de libros. La aplicación garantiza la seguridad utilizando tokens JWT y sigue las mejores prácticas en el diseño de API REST. El backend está construido con Spring Boot 3 y Spring Security 6, mientras que el frontend está desarrollado utilizando Angular con Bootstrap para el estilo.
+Bilbio Net es una aplicación completa que permite a los usuarios gestionar sus colecciones de libros y participar en una comunidad de entusiastas de los libros. Ofrece características como registro de usuario, validación de correo electrónico segura, gestión de libros (incluyendo creación, actualización, compartición y archivado), préstamo de libros con verificación de disponibilidad, funcionalidad de devolución de libros y aprobación de devoluciones de libros. La aplicación garantiza la seguridad utilizando tokens JWT y sigue las mejores prácticas en el diseño de API REST. El backend está construido con Spring Boot 3 y Spring Security 6, mientras que el frontend está desarrollado utilizando Angular con Bootstrap para el estilo.
 
 ## Características
 
@@ -32,7 +32,7 @@ Book Social Network es una aplicación completa que permite a los usuarios gesti
 
 ## Tecnologías Utilizadas
 
-### Backend (book-network)
+### Backend (biblio-net)
 
 - Spring Boot 3
 - Spring Security 6
@@ -44,7 +44,7 @@ Book Social Network es una aplicación completa que permite a los usuarios gesti
 - GitHub Actions
 - Keycloak
 
-### Frontend (book-network-ui)
+### Frontend (biblio-net-ui)
 
 - Angular
 - Arquitectura Basada en Componentes
@@ -55,7 +55,7 @@ Book Social Network es una aplicación completa que permite a los usuarios gesti
 
 ## Utilizar proyecto
 
-Para comenzar con el proyecto Book Social Network, sigue las instrucciones de configuración en los directorios respectivos:
+Para comenzar con el proyecto BiblioNet, sigue las instrucciones de configuración en los directorios respectivos:
 
 - [Instrucciones de Configuración del Backend](https://github.com/Agslz/book-social-network/blob/main/book-network/README.md)
 - [Instrucciones de Configuración del Frontend](https://github.com/Agslz/book-social-network/blob/main/book-network-ui/README.md)

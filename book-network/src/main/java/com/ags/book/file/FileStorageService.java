@@ -15,6 +15,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import static java.io.File.separator;
+import static java.lang.System.currentTimeMillis;
 
 @Service
 @Slf4j
@@ -33,40 +34,41 @@ public class FileStorageService {
         return uploadFile(sourceFile, fileUploadSubPath);
     }
 
-    private String uploadFile(@Nonnull MultipartFile sourceFile, @Nonnull String fileUploadSubPath) {
+    private String uploadFile(
+            @Nonnull MultipartFile sourceFile,
+            @Nonnull String fileUploadSubPath
+    ) {
         final String finalUploadPath = fileUploadPath + separator + fileUploadSubPath;
         File targetFolder = new File(finalUploadPath);
-        if(!targetFolder.exists()){
+
+        if (!targetFolder.exists()) {
             boolean folderCreated = targetFolder.mkdirs();
-            if(!folderCreated){
-                log.warn("Failed to create the target folder");
+            if (!folderCreated) {
+                log.warn("Failed to create the target folder: " + targetFolder);
                 return null;
             }
         }
         final String fileExtension = getFileExtension(sourceFile.getOriginalFilename());
-        // ./upload/users/1/1U9323923923.jpg
-        String targetFilePath = finalUploadPath + separator + System.currentTimeMillis() + "." + fileExtension;
+        String targetFilePath = finalUploadPath + separator + currentTimeMillis() + "." + fileExtension;
         Path targetPath = Paths.get(targetFilePath);
-        try{
-            Files.write(targetPath,sourceFile.getBytes());
-            log.info("File saved to " + targetFilePath);
+        try {
+            Files.write(targetPath, sourceFile.getBytes());
+            log.info("File saved to: " + targetFilePath);
             return targetFilePath;
-        }catch (IOException e){
+        } catch (IOException e) {
             log.error("File was not saved", e);
         }
         return null;
     }
 
     private String getFileExtension(String fileName) {
-        if(fileName == null || fileName.isEmpty()){
-            return null;
+        if (fileName == null || fileName.isEmpty()) {
+            return "";
         }
-        //something.json
         int lastDotIndex = fileName.lastIndexOf(".");
-        if(lastDotIndex == -1){
-            return null;
+        if (lastDotIndex == -1) {
+            return "";
         }
-        //JPG -> jpg
         return fileName.substring(lastDotIndex + 1).toLowerCase();
     }
 }
