@@ -42,7 +42,7 @@ export class ManageBookComponent implements OnInit {
            synopsis: book.synopsis as string,
            shareable: book.shareable
          };
-         this.selectedPicture='data:image/jpg;base64,' + book.cover;
+          this.selectedPicture='data:image/jpg;base64,' + book.cover;
         }
       });
     }
