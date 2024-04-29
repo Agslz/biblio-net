@@ -1,6 +1,6 @@
 services:
   postgres:
-    container_name: postgres-slq-bsn
+    container_name: postgres-sql-bsn
     image: postgres
     environment:
       POSTGRES_USER: username
@@ -10,19 +10,25 @@ services:
     volumes:
       - postgres:/data/postgres
     ports:
-      - "5432:5432"
+      - 5432:5432
     networks:
       - spring-demo
     restart: unless-stopped
-
   mail-dev:
     container_name: mail-dev-bsn
     image: maildev/maildev
     ports:
-      - "1080:1080"
-      - "1025:1025"
+      - 1080:1080
+      - 1025:1025
+  bsn-api:
+    container_name: bsn-api
+    image: bsn/bsn:1.0.0
+    ports:
+      - 8088:8088
     networks:
       - spring-demo
+    depends_on:
+      - postgres
 
 networks:
   spring-demo:
