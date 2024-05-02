@@ -26,10 +26,6 @@ Bilbio Net es una aplicación completa que permite a los usuarios gestionar sus 
 
 ![image](https://github.com/Agslz/book-social-network/assets/83142033/f0d446d6-d88a-4110-a362-fe594e6b6c38)
 
-#### Diagrama Backend pipeline
-
-![image](https://github.com/Agslz/book-social-network/assets/83142033/24d79c1b-6a66-4453-a1bb-803fba62a707)
-
 ## Tecnologías Utilizadas
 
 ### Backend (biblio-net)
