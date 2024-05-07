@@ -26,7 +26,7 @@ Bilbio Net es una aplicación completa que permite a los usuarios gestionar sus 
 
 ![image](https://github.com/Agslz/book-social-network/assets/83142033/f0d446d6-d88a-4110-a362-fe594e6b6c38)
 
-### Diagrama Keycloack security
+### Diagrama Keycloak security
 
 ![imagen](https://github.com/Agslz/biblio-net/assets/83142033/aa781be3-3658-4ee6-80ee-643185c010b4)
 
